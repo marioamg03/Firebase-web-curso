@@ -1,16 +1,16 @@
-# invie
-Las guitarras más locas
+# Curso de Firebase Web
+Proyecto Web Utilizando Firebase en el cual se utilizaron los siguientes complementos:
 
-##Instalacion de firebase
-npm install -g firebase-tools
+* Firebase Autentication (Facebook,Google)
+* Firebase Database
+* Firebase Storage
+* Firebase Hosting
 
-## Inizializacion Firebase
-npm firebase init
+## Instalacion de Firebase-Tools.
+1. npm install -g firebase-tool
 
-seleccionar los servicios con space y enter.
-
-#Firebase hosting
-What do you want to use as your public directory? .
-Configure as a single-page app (rewrite all urls to /index.html)? Yes
-File ./index.html already exists. Overwrite? No
+## Inicialización de Server local.
 firebase serve
+
+## URL del proyecto desde Firebase Hosting.
+[Link] (https://platzi-inve.firebaseapp.com/)
