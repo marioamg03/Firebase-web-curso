@@ -10,7 +10,7 @@ Proyecto Web Utilizando Firebase en el cual se utilizaron los siguientes complem
 1. npm install -g firebase-tool
 
 ## Inicialización de Server local.
-firebase serve
+* firebase serve
 
 ## URL del proyecto desde Firebase Hosting.
-[Link] (https://platzi-inve.firebaseapp.com/)
+[Link](https://platzi-inve.firebaseapp.com/)
