@@ -2,6 +2,9 @@ var btnLoginG = document.getElementById('btnLoginG');
 var btnLoginF = document.getElementById('btnLoginF');
 var btnLogout = document.getElementById('btnLogout');
 
+var btnProfile = document.getElementById('btnProfile');
+var btnAdmin = document.getElementById('btnAdmin');
+
 const imgref = firebase.storage().ref()
 var refGuitarras = firebase.database().ref("guitarras")
 
@@ -17,15 +20,26 @@ var usuario = {};
 // console.log(btnLoginF);
 // console.log(btnLogout);
 
-// firebase.auth().onAuthStateChanged(function(user){
-// // console.log(user);
-//   if (user) {
-//     console.log('Tenemos usuario');
-//     window.location.href = 'perfil.html'
-//   } else {
-//     console.log('No tenemos usuario');
-//   }
-// })
+firebase.auth().onAuthStateChanged(function(user){
+// console.log(user);
+  if (user) {
+    console.log('Tenemos usuario');
+    btnLoginG.style.visibility = "hidden";
+    btnLoginF.style.visibility = "hidden";
+    btnLogout.style.visibility = "visible";
+    btnProfile.style.visibility = "visible";
+    btnAdmin.style.visibility = "visible";
+  } else {
+    console.log('No tenemos usuario');
+
+    btnLoginG.style.visibility = "visible";
+    btnLoginF.style.visibility = "visible";
+    btnLogout.style.visibility = "hidden";
+    btnProfile.style.visibility = "hidden";
+    btnAdmin.style.visibility = "hidden";
+
+  }
+})
 
 // Sign in using a popup google.
 btnLoginG.addEventListener("click",function (){
@@ -76,6 +90,22 @@ btnLogout.addEventListener("click",function (){
     console.log(err);
   });
 })
+
+btnProfile.addEventListener("click",function (){
+  event.preventDefault();
+  window.location.assign("../perfil.html");
+})
+
+btnAdmin.addEventListener("click",function (){
+  event.preventDefault();
+  window.location.assign("../admin.html");
+})
+
+
+
+
+
+
 
 function agregarUsuario(usuario,uid) {
   databaseRef.child(uid).update(usuario)

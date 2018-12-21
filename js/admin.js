@@ -7,6 +7,18 @@ var tipo = document.getElementById('tipo');
 var precio = document.getElementById('precio');
 var imagen = document.getElementById('imagen');
 
+var btnLogout = document.getElementById('btnLogout');
+
+btnLogout.addEventListener("click",function (){
+  event.preventDefault();
+  firebase.auth().signOut().then(function() {
+    console.log("Se cerro la sesion");
+    alert("Se cerro la sesion");
+  }).catch(function(err){
+    console.log(err);
+  });
+})
+
 // funcion para leer si existe un cambio en el
 //estado de sesion del usuario
 firebase.auth().onAuthStateChanged(function(user){
